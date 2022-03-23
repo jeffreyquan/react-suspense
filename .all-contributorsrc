@@ -210,6 +210,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "marioleed",
+      "name": "Mario Sannum",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1763448?v=4",
+      "profile": "https://github.com/marioleed",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lucianoayres",
+      "name": "Luciano Ayres",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20209393?v=4",
+      "profile": "http://www.lucianoayres.com.br",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "repoHost": "https://github.com",

@@ -24,7 +24,22 @@ function PokemonInfo({pokemonResource}) {
 
 function App() {
   const [pokemonName, setPokemonName] = React.useState('')
-  const [pokemonResource, isPending] = usePokemonResource(pokemonName)
+  // 🐨 move these two lines to a custom hook called usePokemonResource
+  const [startTransition, isPending] = React.useTransition(SUSPENSE_CONFIG)
+  const [pokemonResource, setPokemonResource] = React.useState(null)
+  // 🐨 call usePokemonResource with the pokemonName.
+  //    It should return both the pokemonResource and isPending
+
+  // 🐨 move this useEffect call to your custom usePokemonResource hook
+  React.useEffect(() => {
+    if (!pokemonName) {
+      setPokemonResource(null)
+      return
+    }
+    startTransition(() => {
+      setPokemonResource(getPokemonResource(pokemonName))
+    })
+  }, [pokemonName, startTransition])
 
   function handleSubmit(newPokemonName) {
     setPokemonName(newPokemonName)
